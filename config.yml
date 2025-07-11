@@ -6,11 +6,11 @@ engines:
     name: "stockfish"          # Binary name of the engine to use (updated for Windows).
     ponder: true                          # Think on opponent's time.
     silence_stderr: false                 # Suppresses stderr output.
-    move_overhead_multiplier: 1.0         # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
+    move_overhead_multiplier: 21.0         # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     uci_options:                          # Arbitrary UCI options passed to the engine. (Commenting allowed)
       Threads: 6                          # Max CPU threads the engine can use.
-      Hash: 512                           # Max memory (in megabytes) the engine can allocate.
-      Move Overhead: 250                  # Increase if your bot flags games too often.
+      Hash: 1024                           # Max memory (in megabytes) the engine can allocate.
+      Move Overhead: 100                  # Increase if your bot flags games too often.
 
   variants:                               # Engine used for standard chess and when no suitable special engine is configured.
     dir: "./engines"                      # Directory containing the engine.
@@ -20,8 +20,9 @@ engines:
     move_overhead_multiplier: 1.0         # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     uci_options:                          # Arbitrary UCI options passed to the engine. (Commenting allowed)
       Threads: 6                          # Max CPU threads the engine can use.
-      Hash: 512                           # Max memory (in megabytes) the engine can allocate.
+      Hash: 1024                           # Max memory (in megabytes) the engine can allocate.
       Move Overhead: 100                  # Increase if your bot flags games too often.
+      Use NNUE: true
       EvalFile: "3check-cb5f517c228b.nnue:antichess-dd3cbe53cd4e.nnue:atomic-2cf13ff256cc.nnue:crazyhouse-8ebf84784ad2.nnue:horde-28173ddccabe.nnue:kingofthehill-978b86d0e6a4.nnue:racingkings-636b95f085e3.nnue"
  # Use the same pattern for 'bullet', 'blitz', 'rapid', 'classical',
 # 'antichess', 'atomic', 'chess960', 'crazyhouse', 'horde', 'kingofthehill', 'racingkings' and '3check' as well.
@@ -70,8 +71,8 @@ opening_books:
       selection: best_move          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
 #     max_depth: 16                       # Half move max depth. (Comment this line for max depth)
       names:                              # List of names of books to use if there is no specific book for the time control, white, black or chess960.
+        - white
         - DefaultBook
-        - BackupBook
 #   Use the same pattern for 'bullet', 'blitz', 'rapid', 'classical',
 #   'antichess', 'atomic', 'chess960', 'crazyhouse', 'horde', 'kingofthehill', 'racingkings' and '3check' as well.
 #   Append '_white' or '_black' to use the books only as the specific color.
@@ -123,7 +124,7 @@ offer_draw:
   against_humans: true                    # Activate whether these settings should apply against humans.
 
 resign:
-  enabled: false                          # Activate whether the bot should resign games.
+  enabled: true                          # Activate whether the bot should resign games.
   score: -1000                            # If the score is less than or equal to this value, the bot resigns (in cp).
   consecutive_moves: 5                    # How many moves in a row the score has to be below the resign value.
   against_humans: false                    # Activate whether these settings should apply against humans.
@@ -197,10 +198,10 @@ messages:
 #   - Username1
 #   - Username2
 
-  blacklist:                              # List of users who are not challenged and whose challenges are declined.
-    - AndroMonsterFish
+#  blacklist:                              # List of users who are not challenged and whose challenges are declined.
+#    - AndroMonsterFish
 #   - Username2
 
 books:
   DefaultBook: "./engines/Book2.bin"
-  BackupBook: "./engines/Book3.bin"
+  white: "./engines/white.bin"
