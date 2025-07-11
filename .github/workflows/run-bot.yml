@@ -48,7 +48,7 @@ jobs:
           mv engines/stockfish* engines/stockfish
           chmod +x engines/stockfish
 
-      - name: Make Fairy-Stockfish executable
+      - name: Make fsf executable
         run: chmod +x ./engines/fsf
 
       - name: Run Bot
