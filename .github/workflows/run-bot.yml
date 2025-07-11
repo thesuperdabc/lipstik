@@ -49,7 +49,7 @@ jobs:
           chmod +x engines/stockfish
 
       - name: Make Fairy-Stockfish executable
-        run: chmod +x ./engines/fairy-stockfish
+        run: chmod +x ./engines/fsf
 
       - name: Run Bot
-        run: python -u user_interface.py --matchmaking
+        run: python -u user_interface.py 
