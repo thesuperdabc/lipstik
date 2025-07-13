@@ -203,4 +203,4 @@ messages:
 
 books:
   DefaultBook: "./engines/Book2.bin"
-  lichess_ToromBot_2025-07-13: "./engines/lichess_ToromBot_2025-07-13.bin.bin"
+  lichess_ToromBot_2025-07-13: "./engines/lichess_ToromBot_2025-07-13.bin"
