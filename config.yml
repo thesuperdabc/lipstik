@@ -55,7 +55,7 @@ gaviota:
   max_pieces: 5                           # Count of max pieces in the local gaviota endgame tablebases.
 
 opening_books:
-  enabled: false                          # Activate opening books.
+  enabled: true                          # Activate opening books.
   priority: 400                           # Priority with which this move source is used. Higher priority is used first.
   books:
 #   bullet:
@@ -68,11 +68,10 @@ opening_books:
 #     names:                              # List of names of books to use as black.
 #       - BlackBook
     standard:
-      selection: best_move          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
+      selection: weighted_random          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
 #     max_depth: 16                       # Half move max depth. (Comment this line for max depth)
       names:                              # List of names of books to use if there is no specific book for the time control, white, black or chess960.
-        - white
-        - DefaultBook
+        - lichess_ToromBot_2025-07-13.bin
 #   Use the same pattern for 'bullet', 'blitz', 'rapid', 'classical',
 #   'antichess', 'atomic', 'chess960', 'crazyhouse', 'horde', 'kingofthehill', 'racingkings' and '3check' as well.
 #   Append '_white' or '_black' to use the books only as the specific color.
@@ -204,4 +203,4 @@ messages:
 
 books:
   DefaultBook: "./engines/Book2.bin"
-  white: "./engines/white.bin"
+  lichess_ToromBot_2025-07-13.bin: "./engines/lichess_ToromBot_2025-07-13.bin.bin"
