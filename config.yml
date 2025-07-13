@@ -55,7 +55,7 @@ gaviota:
   max_pieces: 5                           # Count of max pieces in the local gaviota endgame tablebases.
 
 opening_books:
-  enabled: true                          # Activate opening books.
+  enabled: false                          # Activate opening books.
   priority: 400                           # Priority with which this move source is used. Higher priority is used first.
   books:
 #   bullet:
@@ -92,7 +92,7 @@ online_moves:
     max_depth: 20                         # Half move max depth. (Comment this line for max depth)
 #   max_moves: 1                          # Max number of moves played from Lichess opening explorer. (Comment this line for max moves)
   lichess_cloud:
-    enabled: true                         # Activate online moves from Lichess opening explorer. The move that has performed best for this bot is played.
+    enabled: false                         # Activate online moves from Lichess opening explorer. The move that has performed best for this bot is played.
     use_for_variants: true               # Whether the cloud should be used for other variants than standard and chess960.
     priority: 200                         # Priority with which this move source is used. Higher priority is used first.
     only_without_book: false              # Whether the cloud should only be used if there is no matching book.
