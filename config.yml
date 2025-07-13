@@ -71,7 +71,7 @@ opening_books:
       selection: weighted_random          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
 #     max_depth: 16                       # Half move max depth. (Comment this line for max depth)
       names:                              # List of names of books to use if there is no specific book for the time control, white, black or chess960.
-        - lichess_ToromBot_2025-07-13.bin
+        - lichess_ToromBot_2025-07-13
 #   Use the same pattern for 'bullet', 'blitz', 'rapid', 'classical',
 #   'antichess', 'atomic', 'chess960', 'crazyhouse', 'horde', 'kingofthehill', 'racingkings' and '3check' as well.
 #   Append '_white' or '_black' to use the books only as the specific color.
@@ -203,4 +203,4 @@ messages:
 
 books:
   DefaultBook: "./engines/Book2.bin"
-  lichess_ToromBot_2025-07-13.bin: "./engines/lichess_ToromBot_2025-07-13.bin.bin"
+  lichess_ToromBot_2025-07-13: "./engines/lichess_ToromBot_2025-07-13.bin.bin"
